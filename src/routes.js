@@ -4,6 +4,8 @@ import SobreMin from "./Paginas/SobreMin";
 import Menu from "./Componentes/Menu";
 import Rodaper from "Componentes/Rodape";
 import PaginaPadrao from "Componentes/PaginaPadrao";
+import Post from "Paginas/Post";
+import NaoEncontrada from "Paginas/NaoEncontrada";
 
 function AppRoutes() {
   return (
@@ -14,10 +16,12 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<PaginaPadrao />}>
           <Route path="/" element={<Inicio />} />
-          <Route path="/Sobremin" element={<SobreMin />} />
+          <Route path="/sobremin" element={<SobreMin />} />
+
         </Route>
 
-        <Route path="/*" element={<div>Pagina nao encontrada</div>} />
+        <Route path="/posts/:id" element={<Post />} />
+        <Route path="/*" element={<NaoEncontrada />} />
       </Routes>
 
       <Rodaper />
